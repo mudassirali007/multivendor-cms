@@ -1,0 +1,20 @@
+.row.main-slider-row.flex-no-gutters{
+	background-image: url('http://localhost/multivendor-cms/uploads/slides_image/slides_22.jpg');}
+.p-item {
+		background-color: white;
+		display: flex;
+		width: 94px;}
+.brand-carousel img {
+			height: 70px;}
+div#most-viewed-carousel{
+	display: inline-block;}
+.thumbnail.box-style-2.no-padding{
+		display:inline-block;
+		width: 180px;}
+.home-3-category.d-flex.align-items-center.h-100{
+			background-repeat: no-repeat;}
+ul.nav.nav-tabs{
+	width: max-content;}
+	
+
+												
