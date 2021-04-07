@@ -1,7 +1,12 @@
 <div class="thumbnail box-style-2 no-padding" itemscope itemtype="http://schema.org/Product">
     <div class="media">
     	<div class="cover"></div>
-        <div class="media-link image_delay" data-src="<?php echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one'); ?>" style="background-image:url('<?php echo img_loading(); ?>');background-size:cover;">
+        <div class="media-link image_delay" data-src="<?php echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one'); ?>" 
+        style="background-image:url('<?php 
+        // echo img_loading(); 
+        echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one');
+        
+        ?>');background-size:cover;">
             <?php
                 if($this->crud_model->get_type_name_by_id('product',$product_id,'current_stock') <=0 && !$this->crud_model->is_digital($product_id)){ 
             ?>

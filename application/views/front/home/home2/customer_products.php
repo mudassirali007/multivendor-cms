@@ -33,38 +33,56 @@
 </section>
 <!-- /PAGE -->
 <script>
-$(document).ready(function(){
-    $(".owl-carousel-3").owlCarousel({
-        autoplay: true,
-        loop: true,
-        margin: 30,
-        dots: false,
-        nav: true,
-        navText: [
-            "<i class='fa fa-angle-left'></i>",
-            "<i class='fa fa-angle-right'></i>"
-        ],
-        responsive: {
-            0: {items: 2},
-            479: {items: 2},
-            768: {items: 2},
-            991: {items: 5},
-            1024: {items: 5}
+	function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
         }
-    });
+}   
+    //     $(document).ready(function(){
+        docReady(function() {
+    // $(".owl-carousel-3").owlCarousel({
+    //     autoplay: true,
+    //     loop: true,
+    //     margin: 30,
+    //     dots: false,
+    //     nav: true,
+    //     navText: [
+    //         "<i class='fa fa-angle-left'></i>",
+    //         "<i class='fa fa-angle-right'></i>"
+    //     ],
+    //     responsive: {
+    //         0: {items: 2},
+    //         479: {items: 2},
+    //         768: {items: 2},
+    //         991: {items: 5},
+    //         1024: {items: 5}
+    //     }
+    // });
     set_classified_product_box_height();
 });
 
 function set_classified_product_box_height(){
     var max_title = 0;
-    $('.sl-classified .caption-title').each(function(){
-        var current_height= parseInt($(this).css('height'));
+    var slClassified = document.querySelectorAll('.sl-classified .caption-title');
+
+// $('.sl-classified .caption-title').each(function(){
+    slClassified.forEach(function(element, index) {
+    // var current_height= parseInt($(this).css('height'));
+    
+    var current_height= parseInt(element.style.height);
         if(current_height >= max_title){
             max_title = current_height;
         }
+        if (max_title > 0) {
+            element.style.height = max_title;
+        }
     });
-    if (max_title > 0) {
-        $('.sl-classified .caption-title').css('height',max_title);
-    }
+    // if (max_title > 0) {
+    //     $('.sl-classified .caption-title').css('height',max_title);
+    // }
 }
 </script>

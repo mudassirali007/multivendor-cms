@@ -853,7 +853,7 @@
 ?>
 
 <script>
-	$.getScript("http://maps.google.com/maps/api/js?v=3.exp&signed_in=true&callback=MapApiLoaded&key=<?php echo $this->db->get_where('general_settings',array('type' => 'api_key'))->row()->value; ?>", function () {});
+	// $.getScript("http://maps.google.com/maps/api/js?v=3.exp&signed_in=true&callback=MapApiLoaded&key=<?php echo $this->db->get_where('general_settings',array('type' => 'api_key'))->row()->value; ?>", function () {});
 	function MapApiLoaded() {
 		var map;
 		function initialize() {

@@ -147,12 +147,12 @@
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function() {
-        $('[data-toggle="tooltip"]').tooltip(); 
-		$('#setup_slider').html($('#backup_slider').html());
-        run_prop_slide($('#layerslider'));
-        createColorpickers();
-    });
+    // $(document).ready(function() {
+    //     $('[data-toggle="tooltip"]').tooltip(); 
+	// 	$('#setup_slider').html($('#backup_slider').html());
+    //     run_prop_slide($('#layerslider'));
+    //     createColorpickers();
+    // });
 
     $('.slider_preview').click(function() {
         load_set();

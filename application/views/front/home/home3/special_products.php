@@ -16,7 +16,10 @@
                     <div class="row">
                         <div class="col-md-4">
                             <a href="<?php echo $this->crud_model->product_link($row['product_id']); ?>" class="d-block">
-                                <img class="img-responsive image_delay" style="width:100%;" src="<?php echo img_loading(); ?>" data-src="<?php echo $this->crud_model->file_view('product',$row['product_id'],'100','','thumb','src','multi','one');?>" alt="">
+                                <img class="img-responsive image_delay" style="width:100%;" src="<?php 
+                                // echo img_loading(); 
+                                echo $this->crud_model->file_view('product',$row['product_id'],'100','','thumb','src','multi','one');
+                                ?>" data-src="<?php echo $this->crud_model->file_view('product',$row['product_id'],'100','','thumb','src','multi','one');?>" alt="">
                             </a>
                         </div>
                         <div class="col-md-8">
@@ -60,7 +63,10 @@
                     <div class="row">
                         <div class="col-md-4">
                             <a href="<?php echo $this->crud_model->product_link($row['product_id']); ?>">
-                                <img class="img-responsive image_delay" style="width:100%;" src="<?php echo img_loading(); ?>" data-src="<?php echo $this->crud_model->file_view('product',$row['product_id'],'100','','thumb','src','multi','one');?>" alt="">
+                                <img class="img-responsive image_delay" style="width:100%;" src="<?php 
+                                // echo img_loading(); 
+                                echo $this->crud_model->file_view('product',$row['product_id'],'100','','thumb','src','multi','one');
+                                ?>" data-src="<?php echo $this->crud_model->file_view('product',$row['product_id'],'100','','thumb','src','multi','one');?>" alt="">
                             </a>
                         </div>
                         <div class="col-md-8">
@@ -140,7 +146,17 @@
 <!-- /PAGE -->
 
 <script>
-$(document).ready(function(){
+	function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+        }
+}   
+    //     $(document).ready(function(){
+        docReady(function() {
     setTimeout(function(){
         set_special_product_box();
     },500);
@@ -148,23 +164,33 @@ $(document).ready(function(){
 
 function set_special_product_box(){
     var max_height = 0;
-    $('.product-box-sm').each(function(){
-        var current_height= parseInt($(this).css('height'));
+    var product = document.querySelectorAll('.product-box-sm');
+        product.forEach(function(element, index) {
+    // $('.product-box-sm').each(function(){
+        var current_height= parseInt(element.style.height);
+
+        // var current_height= parseInt($(this).css('height'));
         if(current_height >= max_height){
             max_height = current_height;
         }
+        element.style.height = max_height
     });
-    $('.product-box-sm').css('height',max_height);
+    // $('.product-box-sm').css('height',max_height);
     
     var max_title=0;
-    $('.special-products .inro-section').each(function(){
-        var current_height= parseInt($(this).css('height'));
+    var product = document.querySelectorAll('.special-products .inro-section');
+        product.forEach(function(element, index) {
+  
+    // $('.special-products .inro-section').each(function(){
+        // var current_height= parseInt($(this).css('height'));
+        var current_height= parseInt(element.style.height);
         if(current_height >= max_title){
             max_title = current_height;
         }
+        element.style.height = max_height
     });
-    $('.special-products .inro-section').css('height',max_title);
+    // $('.special-products .inro-section').css('height',max_title);
 
-    $('[data-toggle="tooltip"]').tooltip({placement:"auto"});
+    // $('[data-toggle="tooltip"]').tooltip({placement:"auto"});
 }
 </script>

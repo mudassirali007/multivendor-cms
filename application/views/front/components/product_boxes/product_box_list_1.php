@@ -3,7 +3,11 @@
         <div class="col-md-4 col-sm-4 col-xs-12">
             <div class="media">
             	<div class="cover"></div>                
-        		<div class="media-link image_delay" data-src="<?php echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one'); ?>" style="background-image:url('<?php echo img_loading(); ?>');background-size:cover; background-position:center;">
+        		<div class="media-link image_delay" data-src="<?php echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one'); ?>" 
+                style="background-image:url('<?php 
+                // echo img_loading(); 
+                echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one');
+                ?>');background-size:cover; background-position:center;">
                     <span onclick="quick_view('<?php echo $this->crud_model->product_link($product_id,'quick'); ?>')">
                         <span class="icon-view">
                             <strong><i class="fa fa-eye"></i></strong>

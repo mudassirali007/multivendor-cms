@@ -16,7 +16,7 @@ include 'meta/'.$asset_page.'.php';
 <link rel="shortcut icon" href="<?php echo base_url(); ?>uploads/others/favicon.<?php echo $ext; ?>">
 
 <title><?php echo $page_title; ?></title>
-<?php if($this->crud_model->get_type_name_by_id('general_settings','80','value') == 'ok'){?>
+<?php if($this->crud_model->get_type_name_by_id('general_settings','80','value') == 'ok' && false){?>
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -101,7 +101,7 @@ include 'meta/'.$asset_page.'.php';
 <link href="<?php echo base_url(); ?>template/front/plugins/smedia/custom-1.css" rel="stylesheet">
 
 <!-- Head Libs -->
-<script src="<?php echo base_url(); ?>template/front/plugins/jquery/jquery-1.11.1.min.js"></script>
+<!-- <script src="<?php echo base_url(); ?>template/front/plugins/jquery/jquery-1.11.1.min.js"></script> -->
 <?php
 $font =  $this->db->get_where('ui_settings',array('type' => 'font'))->row()->value;
 ?>

@@ -144,7 +144,17 @@ include 'includes/bottom/index.php';*/
 </style>
 
 <script>
-    $(document).ready(function(){
+function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+        }
+}   
+    // $(document).ready(function(){
+        docReady(function() {
         $('.home-switch button').on('click', function(){
             if ($('.home-switch').hasClass('active')) {
                 $('.home-switch').removeClass('active');

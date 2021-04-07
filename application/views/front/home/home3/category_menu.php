@@ -119,7 +119,10 @@
                                                                             <?php
                                                                             if(file_exists('uploads/category_image/'.$row['banner'])){
                                                                             ?>
-                                                                            <img class="img-responsive image_delay" src="<?php echo img_loading(); ?>" data-src="<?php echo base_url();?>uploads/category_image/<?php echo $row['banner']; ?>" alt="banner"/> 
+                                                                            <img class="img-responsive image_delay" src="<?php 
+                                                                            // echo img_loading(); 
+                                                                            echo base_url()."uploads/category_image/". $row['banner'];
+                                                                            ?>" data-src="<?php echo base_url();?>uploads/category_image/<?php echo $row['banner']; ?>" alt="banner"/> 
                                                                             <?php
                                                                                 } else {
                                                                             ?>
@@ -200,13 +203,23 @@
 <!-- /PAGE -->
 
 <script>
-    $(document).ready(function(){
-        $('.category_side_set').each(function(){
-            var obj = $(this);
-            var childPos = obj.offset();
-            var parentPos = obj.parent().offset();
-            var reduce_top = childPos.top - parentPos.top;
-            obj.find('.sub-menu').css('top','-'+reduce_top+'px');
-        });
+    function docReady(fn) {
+    // see if DOM is already available
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        // call on next available tick
+        setTimeout(fn, 1);
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+        }
+}   
+    //     $(document).ready(function(){
+        docReady(function() {
+        // $('.category_side_set').each(function(){
+        //     var obj = $(this);
+        //     var childPos = obj.offset();
+        //     var parentPos = obj.parent().offset();
+        //     var reduce_top = childPos.top - parentPos.top;
+        //     obj.find('.sub-menu').css('top','-'+reduce_top+'px');
+        // });
     });
 </script>
