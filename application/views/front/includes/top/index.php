@@ -58,7 +58,7 @@ include 'meta/'.$asset_page.'.php';
     <?php $facebook_chat_logged_out_greeting = $this->crud_model->get_settings_value('general_settings','facebook_chat_logged_out_greeting','value'); ?>
 <!-- facebook chat starts -->
 <div id="fb-root"></div>
-<script>
+<!-- <script>
     window.fbAsyncInit = function() {
         FB.init({
             xfbml            : true,
@@ -73,7 +73,7 @@ include 'meta/'.$asset_page.'.php';
         js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-</script>
+</script> -->
 <div class="fb-customerchat"
      attribution=setup_tool
      page_id="<?= $facebook_chat_page_id ?>"

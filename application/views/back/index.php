@@ -34,5 +34,5 @@
 	<!-- END OF CONTAINER -->
 
 	<!-- SETTINGS - DEMO PURPOSE ONLY -->	
-<?php include 'includes_bottom.php';?>
+	<?php include 'includes_bottom.php';?>
 

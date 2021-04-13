@@ -96,7 +96,7 @@
 
 
 	<!--Buttons [ SAMPLE ]
-	<script src="<?php echo base_url(); ?>template/back/js/demo/ui-buttons.js*/"></script>-->
+	<script src="<?php echo base_url(); ?>template/back/js/demo/ui-buttons.js"></script>-->
 
 	<!--Countdown [ SAMPLE ]-->
 	<script src="<?php echo base_url(); ?>template/back/js/jquery.countdown.min.js"></script>
@@ -177,6 +177,6 @@
 		$(document).ready(function(){
 			$('#content-container').css('min-height',$('#mainnav-menu').height()+'px');
 		});
-    </script>-->
+    </script>-->*/
 </body>
 </html>
