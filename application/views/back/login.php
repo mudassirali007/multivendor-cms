@@ -26,7 +26,7 @@
 	<link href="<?php echo base_url(); ?>template/back/plugins/pace/pace.min.css" rel="stylesheet">
 
     <!-- COMMENTED BELOW 2 to block js-->
-	<!-- <script src="<?php/*echo base_url();?>template/back/plugins/pace/pace.min.j*/"></script> -->
+	<!-- <script src="<?php echo base_url();?>template/back/plugins/pace/pace.min.js"></script> -->
 
 
 	<?php $ext =  $this->db->get_where('ui_settings',array('type' => 'fav_ext'))->row()->value; $this->benchmark->mark_time();?>
