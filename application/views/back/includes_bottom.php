@@ -1,7 +1,8 @@
 
 	<!--Activeit Admin [ RECOMMENDED ]-->
 	<script src="<?php echo base_url(); ?>template/back/js/activeit.min.js"></script>
-
+	</body>
+</html>
 	<!-- BLOCKED MAXIMUM JS-->
 	<!--Morris.js [ OPTIONAL ]
 	<script src="<?/*php echo base_url(); ?>template/back/plugins/morris-js/raphael-js/raphael.min.js"></script>-->
@@ -178,5 +179,3 @@
 			$('#content-container').css('min-height',$('#mainnav-menu').height()+'px');
 		});
     </script>-->*/
-</body>
-</html>
