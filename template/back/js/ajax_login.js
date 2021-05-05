@@ -214,7 +214,7 @@
 						});			
 						$('.snbtn').html('SIGN IN');			
 					} else if(data == 'lets_login'){
-						location.replace(base_url+''+user_type);
+						location.replace(base_url+''+user_type+'/loggedIn');
 						$.activeitNoty({
 							type: 'success',
 							icon : 'fa fa-check',
