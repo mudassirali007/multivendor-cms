@@ -22,6 +22,7 @@ class Home extends CI_Controller
         $this->load->library('twoCheckout_Lib');
         $this->load->library('vouguepay');
         $this->load->library('pum');
+        $this->load->library('captchasdotnet');
         /*cache control*/
         //ini_set("user_agent","My-Great-Marketplace-App");
         $cache_time = $this->db->get_where('general_settings', array('type' => 'cache_time'))->row()->value;
@@ -59,6 +60,10 @@ class Home extends CI_Controller
     /* FUNCTION: Loads Homepage*/
     public function index()
     {
+        if (!$this->session->userdata('captchaValidation')) {
+            $this->validateCaptcha();
+            return;
+        }
         //$this->output->enable_profiler(TRUE);
         //$page_data['min'] = $this->get_range_lvl('product_id !=', '', "min");
         //$page_data['max'] = $this->get_range_lvl('product_id !=', '', "max");
@@ -304,7 +309,74 @@ class Home extends CI_Controller
             redirect(base_url(), 'refresh');
         }
     }
-
+    // Start: Captcha
+    function checkCaptcha(){
+        $random_string  = $this->input->get_post('random_string');
+        $password = $this->input->get_post('password');
+        $permitted_chars = 'abcdefghkmnopqrstuvwxyz';
+        // $random_string = $this->generate_string($permitted_chars, 20);
+        $captchas = $this->captchasdotnet->CaptchasDotNet('mudassir', 
+        'Gl4e3NP6xUds4YhozoRA1BbZecYbhiuY6fqmfu28',
+        'temp/captcha',
+        '3600',
+        $permitted_chars,'6',
+        '240','80','000088');
+        if (!$this->captchasdotnet->validate($random_string))
+        {
+            $page_data['message']  = 'Error: Try Again';
+            // var_dump('in if '.$random_string);exit;   
+        } 
+        elseif(!$this->captchasdotnet->verify($password)){
+            $page_data['message']  = 'Error: Wrong Captcha';
+            // var_dump('in ifelse wrong password');exit;
+        }
+        else {
+            $this->session->set_userdata('captchaValidation', true);
+            redirect(base_url() . 'home', 'refresh');
+        }
+        $page_data['random_string'] = $this->captchasdotnet->random();
+        $page_data['image'] = $this->captchasdotnet->image();
+        $this->load->view('captcha/index', $page_data);
+       
+    }
+    function validateCaptcha()
+    {
+       
+        $permitted_chars = 'abcdefghkmnopqrstuvwxyz';
+        $string = $this->generate_string($permitted_chars, 20);
+        $captchas = $this->captchasdotnet->CaptchasDotNet('mudassir', 
+        'Gl4e3NP6xUds4YhozoRA1BbZecYbhiuY6fqmfu28',
+        'temp/captcha',
+        '3600',
+        $permitted_chars,'6',
+        '240','80','000088');
+        $page_data['message']  = 'Are You Human?';
+        $page_data['random_string'] = $this->captchasdotnet->random();
+        $page_data['image'] = $this->captchasdotnet->image();
+        $this->load->view('captcha/index', $page_data);
+    }
+    function getUserIpAddr(){
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+            //ip from share internet
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            //ip pass from proxy
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
+    }
+    function generate_string($input, $strength = 16) {
+        $input_length = strlen($input);
+        $random_string = '';
+        for($i = 0; $i < $strength; $i++) {
+            $random_character = $input[mt_rand(0, $input_length - 1)];
+            $random_string .= $random_character;
+        }
+        return $random_string;
+    }
+    // End: Captcha
 
     function surfer_info()
     {
