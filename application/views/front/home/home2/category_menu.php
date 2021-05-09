@@ -118,10 +118,7 @@
                                                                                     <?php
 																					if(file_exists('uploads/category_image/'.$row['banner'])){
 																					?>
-																					<img class="img-responsive image_delay" src="<?php 
-                                                                                    // echo img_loading();
-                                                                                    echo base_url()."uploads/category_image/".$row['banner'];
-                                                                                    ?>" data-src="<?php echo base_url();?>uploads/category_image/<?php echo $row['banner']; ?>" alt="banner"/> 
+																					<img class="img-responsive image_delay" src="<?php echo img_loading(); ?>" data-src="<?php echo base_url();?>uploads/category_image/<?php echo $row['banner']; ?>" alt="banner"/> 
 																					<?php
 																						} else {
 																					?>
@@ -209,10 +206,7 @@
                     <div class="thumbnail">
                         <div class="media">
                             <span class="media-link" style="height: auto;">
-                                <img class="img-responsive image_delay" src="<?php 
-                                // echo img_loading(); 
-                                echo $this->crud_model->file_view('product',$row['product_id'],'','','thumb','src','multi','one');
-                                ?>" data-src="<?php echo $this->crud_model->file_view('product',$row['product_id'],'','','thumb','src','multi','one');?>" alt="">
+                                <img class="img-responsive image_delay" src="<?php echo img_loading(); ?>" data-src="<?php echo $this->crud_model->file_view('product',$row['product_id'],'','','thumb','src','multi','one');?>" alt="">
                                 <span class="icon-view" onclick="quick_view('<?php echo $this->crud_model->product_link($row['product_id'],'quick'); ?>')" data-toggle="tooltip" data-original-title="<?php  echo translate('quick_view'); ?>" data-placement="auto">
                                 	<strong>
                                     	<i class="fa fa-eye"></i>
@@ -237,23 +231,13 @@
 <!-- /PAGE -->
 
 <script>
-	function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
-        }
-}   
-    //     $(document).ready(function(){
-        docReady(function() {
-		// $('.category_side_set').each(function(){
-		// 	var obj = $(this);
-		// 	var childPos = obj.offset();
-		// 	var parentPos = obj.parent().offset();
-		// 	var reduce_top = childPos.top - parentPos.top;
-		// 	obj.find('.sub-menu').css('top','-'+reduce_top+'px');
-		// });
+	$(document).ready(function(){
+		$('.category_side_set').each(function(){
+			var obj = $(this);
+			var childPos = obj.offset();
+			var parentPos = obj.parent().offset();
+			var reduce_top = childPos.top - parentPos.top;
+			obj.find('.sub-menu').css('top','-'+reduce_top+'px');
+		});
 	});
 </script>

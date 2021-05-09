@@ -17,7 +17,6 @@
         </div>
         <!--End brand logo & name-->
 
-
         <!--Navbar Dropdown-->
         <div class="navbar-content clearfix">
             <ul class="nav navbar-top-links pull-left">

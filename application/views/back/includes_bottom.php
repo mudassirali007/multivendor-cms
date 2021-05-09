@@ -1,9 +1,10 @@
 
 	<!--Activeit Admin [ RECOMMENDED ]-->
 	<script src="<?php echo base_url(); ?>template/back/js/activeit.min.js"></script>
-	
-	<!-- BLOCKED MAXIMUM JS-->
+
+
 	<!--Morris.js [ OPTIONAL ]-->
+	
 	<script src="<?php echo base_url(); ?>template/back/plugins/morris-js/raphael-js/raphael.min.js"></script>
 
 
@@ -19,7 +20,6 @@
 	<script src="<?php echo base_url(); ?>template/back/plugins/bootstrap-select/bootstrap-select.min.js"></script>
 
 
-
 	<!--Demo script [ DEMONSTRATION ]-->
 	<script src="<?php echo base_url(); ?>template/back/js/demo/activeit-demo.min.js"></script>
 
@@ -28,11 +28,11 @@
 	<script src="<?php echo base_url(); ?>template/back/js/ajax_method.js"></script>
 
 
-	<!--Demo script [ DEMONSTRATION ]-->
+	<!--Demo script [ DEMONSTRATION ]--
 	<script src="<?php echo base_url(); ?>template/back/js/jquery.form.js"></script>
 
 
-	<!--Demo script [ DEMONSTRATION ]-->
+	<!--Demo script [ DEMONSTRATION ]--
 	<script src="<?php echo base_url(); ?>template/back/js/jspdf.js"></script>
 
 
@@ -132,7 +132,7 @@
 	        }
 	    }
 	?>
-     <script type="text/javascript">
+    <script type="text/javascript">
     	setInterval(sale_check, 300000);
     	setInterval(session_check, 600000);
 		function sale_check(){

@@ -31,7 +31,6 @@ class Admin extends CI_Controller
     /* index of the admin. Default: Dashboard; On No Login Session: Back to login page. */
     public function index()
     {
-        
         if ($this->session->userdata('admin_login') == 'yes') {
             $page_data['page_name'] = "dashboard";
             $this->load->view('back/index', $page_data);
@@ -40,13 +39,7 @@ class Admin extends CI_Controller
             $this->load->view('back/login',$page_data);
         }
     }
-    public function loggedIn()
-    {
-        if ($this->session->userdata('admin_login') == 'yes') {
-            $page_data['page_name'] = "dashboard";
-            $this->load->view('back/index', $page_data);
-        } 
-    }
+
     function package($para1 = '', $para2 = '',$para3='') {
         /*if (!$this->crud_model->admin_permission('package')) {
             redirect(base_url() . 'admin');

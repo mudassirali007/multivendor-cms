@@ -35,11 +35,7 @@
 				<div class="thumbnail my-2 no-border no-padding thumbnail-banner size-1x<?php echo $count; ?>">
 					<div class="media">
 						<a class="media-link" href="<?php echo $row['link']; ?>">
-							<div class="img-bg image_delay" data-src="<?php echo $this->crud_model->file_view('banner',$row['banner_id'],'','','no','src','','',$row['image_ext']) ?>" 
-							style="background-image: url('<?php 
-							// echo img_loading(); 
-							echo $this->crud_model->file_view('banner',$row['banner_id'],'','','no','src','','',$row['image_ext'])
-							?>')"></div>
+							<div class="img-bg image_delay" data-src="<?php echo $this->crud_model->file_view('banner',$row['banner_id'],'','','no','src','','',$row['image_ext']) ?>" style="background-image: url('<?php echo img_loading(); ?>')"></div>
 						</a>
 					</div>
 				</div>

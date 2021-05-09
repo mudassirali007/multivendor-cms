@@ -7,4 +7,4 @@
 <link href="<?php echo base_url(); ?>template/front/css/others/megamenu/responsive.css" rel="stylesheet">
 
 <!-- Sidebar_menu JS -->
-<!-- <script src="<?php echo base_url(); ?>template/front/css/others/megamenu/so_megamenu.js"></script> -->
+<script src="<?php echo base_url(); ?>template/front/css/others/megamenu/so_megamenu.js"></script>

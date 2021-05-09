@@ -41,13 +41,6 @@ class Vendor extends CI_Controller
             $this->load->view('back/login',$page_data);
         }
     }
-    public function loggedIn()
-    {
-        if ($this->session->userdata('vendor_login') == 'yes') {
-            $page_data['page_name'] = "dashboard";
-            $this->load->view('back/index', $page_data);
-        } 
-    }
     /*Product slides add, edit, view, delete */
     function slides($para1 = '', $para2 = '', $para3 = '')
     {

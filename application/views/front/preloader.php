@@ -16,24 +16,12 @@
 	} else {
 ?>
 <script type="text/javascript">
-function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
-        }
-}   
 	//$(window).load(function() {
-	// $(document).ready(function(e) {
-		docReady(function() {
-		// $("#loading").delay(500).fadeOut(500);
-		document.getElementById('loading').style.display = 'none';
-
-		// $("#loading-center").click(function() {
-		// 	$("#loading").fadeOut(500);
-		// });
+	$(document).ready(function(e) {
+		$("#loading").delay(500).fadeOut(500);
+		$("#loading-center").click(function() {
+			$("#loading").fadeOut(500);
+		});
 		setTimeout(function(){ load_iamges(); }, 1000);
 
 	});
@@ -49,7 +37,7 @@ function docReady(fn) {
 	if(!isset($from_admin)){
 		$preloader		=  $this->db->get_where('general_settings',array('type' => 'preloader'))->row()->value;
 	}
-	// include 'preloader/'.$preloader.'.php';
+	include 'preloader/'.$preloader.'.php';
 ?>
 <style>
 #loading{

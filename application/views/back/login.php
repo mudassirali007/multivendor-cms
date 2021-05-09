@@ -17,18 +17,12 @@
 	<link href="<?php echo base_url(); ?>template/back/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<!--Demo [ DEMONSTRATION ]-->
 	<link href="<?php echo base_url(); ?>template/back/css/demo/activeit-demo.min.css" rel="stylesheet">
-
-    <!-- COMMENTED BELOW 1 to block js-->
-    <!-- script src="<?php/* echo base_url(); */?>template/back/js/jquery-2.1.1.min.js"></script>-->
+    <script src="<?php echo base_url(); ?>template/back/js/jquery-2.1.1.min.js"></script>
 
 	<!--SCRIPT-->
 	<!--Page Load Progress Bar [ OPTIONAL ]-->
 	<link href="<?php echo base_url(); ?>template/back/plugins/pace/pace.min.css" rel="stylesheet">
-
-    <!-- COMMENTED BELOW 2 to block js-->
-	<!-- <script src="<?php echo base_url();?>template/back/plugins/pace/pace.min.js"></script> -->
-
-
+	<script src="<?php echo base_url(); ?>template/back/plugins/pace/pace.min.js"></script>
 	<?php $ext =  $this->db->get_where('ui_settings',array('type' => 'fav_ext'))->row()->value; $this->benchmark->mark_time();?>
 	<link rel="shortcut icon" href="<?php echo base_url(); ?>uploads/others/favicon.<?php echo $ext; ?>">
 </head>
@@ -190,24 +184,22 @@
             </div>
         <?php } ?>
 	</div>
-
 	<!--jQuery [ REQUIRED ]-->
 	<script src="<?php echo base_url(); ?>template/back/js/jquery-2.1.1.min.js"></script>
     
-    <!-- Comment Below to block js -->
-	<!--BootstrapJS [ RECOMMENDED ]
-	<script src="<?php echo base_url(); ?>template/back/js/bootstrap.min.js"></script>-->
+	<!--BootstrapJS [ RECOMMENDED ]-->
+	<script src="<?php echo base_url(); ?>template/back/js/bootstrap.min.js"></script>
     
-	<!--Activeit Admin [ RECOMMENDED ]
-	<script src="<?php echo base_url(); ?>template/back/js/activeit.min.js"></script>-->
+	<!--Activeit Admin [ RECOMMENDED ]-->
+	<script src="<?php echo base_url(); ?>template/back/js/activeit.min.js"></script>
 
-	<!--Background Image [ DEMONSTRATION ]
-	<script src="<?php echo base_url(); ?>template/back/js/demo/bg-images.js"></script>-->
+	<!--Background Image [ DEMONSTRATION ]-->
+	<script src="<?php echo base_url(); ?>template/back/js/demo/bg-images.js"></script>
     
-	<!--Bootbox Modals [ OPTIONAL ]
-	<script src="<?php echo base_url(); ?>template/back/plugins/bootbox/bootbox.min.js*/"></script> -->
+	<!--Bootbox Modals [ OPTIONAL ]-->
+	<script src="<?php echo base_url(); ?>template/back/plugins/bootbox/bootbox.min.js"></script>
 
-	<!--Demo script [ DEMONSTRATION ] -->
+	<!--Demo script [ DEMONSTRATION ]-->
 	<script src="<?php echo base_url(); ?>template/back/js/ajax_login.js"></script>
 	
 	<script>
@@ -235,8 +227,7 @@
 		    }
 		}
     </script>
-
-    <!--Activeit Admin [ RECOMMENDED ] -->
+    <!--Activeit Admin [ RECOMMENDED ]-->
     <script src="<?php echo base_url(); ?>template/back/js/activeit.min.js"></script>
 </body>
 </html>

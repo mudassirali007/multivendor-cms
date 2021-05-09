@@ -176,17 +176,7 @@
 <!-- /PAGE -->
 
 <script>
-	function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
-        }
-}   
-    //     $(document).ready(function(){
-        docReady(function() {
+$(document).ready(function(){
     setTimeout(function(){
         set_special_product_box();
     },500);
@@ -194,39 +184,23 @@
 
 function set_special_product_box(){
     var max_height = 0;
-    // $('.product-box-sm').each(function(){
-
-        var product = document.querySelectorAll('.product-box-sm');
-        product.forEach(function(element, index) {
-
-        // var current_height= parseInt($(this).css('height'));
-        
-        var current_height= parseInt(element.style.height);
+    $('.product-box-sm').each(function(){
+        var current_height= parseInt($(this).css('height'));
         if(current_height >= max_height){
             max_height = current_height;
         }
-        element.style.height = max_height
     });
-    // $('.product-box-sm').css('height',max_height);
-    
+    $('.product-box-sm').css('height',max_height);
 
     var max_title=0;
-    var product = document.querySelectorAll('.special-products .inro-section');
-        product.forEach(function(element, index) {
-    // $('.product-box-sm').each(function(){
-        var current_height= parseInt(element.style.height);
-
-      
-    // $('.special-products .inro-section').each(function(){
-        // var current_height= parseInt($(this).css('height'));
-        var current_height= parseInt(element.style.height);
+    $('.special-products .inro-section').each(function(){
+        var current_height= parseInt($(this).css('height'));
         if(current_height >= max_title){
             max_title = current_height;
         }
-        element.style.height = max_height
     });
-    // $('.special-products .inro-section').css('height',max_title);
+    $('.special-products .inro-section').css('height',max_title);
 
-    // $('[data-toggle="tooltip"]').tooltip({placement:"auto"});
+    $('[data-toggle="tooltip"]').tooltip({placement:"auto"});
 }
 </script>

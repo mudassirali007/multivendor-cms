@@ -425,24 +425,14 @@
 </header>
 <!-- /HEADER -->
 <script type="text/javascript">
-function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
-        }
-}   
-    //     $(document).ready(function(){
-        docReady(function() {
-        // $('.set_langs').on('click',function(){
-        //     var lang_url = $(this).data('href');                                    
-        //     $.ajax({url: lang_url, success: function(result){
-        //         location.reload();
-        //     }});
-        // });
-        // $('.top-bar-right').load('<?php echo base_url(); ?>home/top_bar_right');
+    $(document).ready(function(){
+        $('.set_langs').on('click',function(){
+            var lang_url = $(this).data('href');                                    
+            $.ajax({url: lang_url, success: function(result){
+                location.reload();
+            }});
+        });
+        $('.top-bar-right').load('<?php echo base_url(); ?>home/top_bar_right');
     });
 </script>
 <?php

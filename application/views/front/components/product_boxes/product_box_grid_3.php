@@ -1,11 +1,7 @@
 <div class="thumbnail box-style-3 no-border no-padding" itemscope itemtype="http://schema.org/Product">
     <div class="media">
     	<div class="cover"></div>
-        <div class="media-link image_delay" data-src="<?php echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one'); ?>" 
-        style="background-image:url('<?php 
-        // echo img_loading(); 
-        echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one'); ?>
-        ?>');background-size:cover;">
+        <div class="media-link image_delay" data-src="<?php echo $this->crud_model->file_view('product',$product_id,'','','thumb','src','multi','one'); ?>" style="background-image:url('<?php echo img_loading(); ?>');background-size:cover;">
             <div class="quick-view-sm hidden-xs hidden-sm">
                 <span class="icon-view" onclick="quick_view('<?php echo $this->crud_model->product_link($product_id,'quick'); ?>')"
                 		data-toggle="tooltip" data-original-title="<?php  echo translate('quick_view'); ?>">

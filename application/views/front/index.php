@@ -17,11 +17,13 @@
     $this->crud_model->check_vendor_mambership();
     if($this->router->fetch_method() == 'product_view' || $this->router->fetch_method() == 'customer_product_view'){
         $keywords    = $product_tags;
-        $description = $page_description;}
+        $description = $page_description;
+    }
 
     if($this->router->fetch_method() == 'vendor_profile' || $this->router->fetch_method() == 'vendor'){
         $keywords    = $vendor_tags;
-        $description = $page_description;}
+        $description = $page_description;
+    }
     ?>
     <title><?php echo $page_title; ?> | <?php echo $system_title; ?></title>
     <?php
@@ -66,8 +68,8 @@ include 'preloader.php';
     $footer = '1';
     include 'footer/footer_'.$footer.'.php';
     ?>
-
     <!-- /FOOTER -->
+
     <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
 
 </div>
@@ -75,13 +77,13 @@ include 'preloader.php';
 <?php
 include 'script_texts.php';
 ?>
-
-<!-- Commented below to Block JS -->
-<?php/*
-include 'includes/bottom/index.php';*/
+<?php
+include 'includes/bottom/index.php';
 ?>
 
+
 <!-- for demo only -->
+
 <?php if(demo()) { ?>
 <div class="home-switch">
     <button>
@@ -104,7 +106,8 @@ include 'includes/bottom/index.php';*/
 </div>
 <style>
     .home-switch.active {
-        right: 0px;}
+        right: 0px;
+    }
     .home-switch {
         position: fixed;
         right: -220px;
@@ -113,16 +116,22 @@ include 'includes/bottom/index.php';*/
         box-shadow: 0 0 20px rgba(0,0,0,0.5);
         background: #fff;
         transition: all 0.3s;
-        -webkit-transition: all 0.3s;}
+        -webkit-transition: all 0.3s;
+    }
+
     .home-switch .preview > div {
         height: 200px;
         width: 200px;
         overflow-y: auto;
         margin: 10px;
         border: 1px solid #ddd;
-        cursor: pointer;}
+        cursor: pointer;
+    }
+
     .home-switch .preview div img {
-        width: 100%;}
+        width: 100%;
+    }
+
     .home-switch button {
         position: absolute;
         background: #000000;
@@ -133,28 +142,19 @@ include 'includes/bottom/index.php';*/
         box-shadow: -7px 0 10px rgba(0,0,0,0.3);
         border-right: 1px solid #ddd;
         color: #fff;
-        font-weight: 700;}
+        font-weight: 700;
+    }
     .home-switch .preview > div div {
         padding: 5px;
         font-size: 15px;
         text-align: center;
         background: #000;
         color: #fff;
-        font-weight: 700;}
+        font-weight: 700;
+    }
 </style>
-
 <script>
-function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
-        }
-}   
-    // $(document).ready(function(){
-        docReady(function() {
+    $(document).ready(function(){
         $('.home-switch button').on('click', function(){
             if ($('.home-switch').hasClass('active')) {
                 $('.home-switch').removeClass('active');
@@ -180,6 +180,10 @@ function docReady(fn) {
 
 </script>
 <?php } ?>
+
 <!-- for demo only -->
+
+
+
 </body>
 </html>

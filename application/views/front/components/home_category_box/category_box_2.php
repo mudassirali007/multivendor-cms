@@ -115,10 +115,7 @@ $digital_ckeck=$this->db->get_where('category',array('category_id'=>$category))-
                                         	<?php 
 												if(file_exists('uploads/category_image/'.$this->crud_model->get_type_name_by_id('category',$category,'banner'))){
 											?>
-                                            <img class="img-responsive image_delay" src="<?php
-                                            //  echo img_loading(); 
-                                             echo base_url()."uploads/category_image/".$this->crud_model->get_type_name_by_id('category',$category,'banner');
-                                             ?>" data-src="<?php echo base_url();?>uploads/category_image/<?php echo $this->crud_model->get_type_name_by_id('category',$category,'banner'); ?>" alt=""/>
+                                            <img class="img-responsive image_delay" src="<?php echo img_loading(); ?>" data-src="<?php echo base_url();?>uploads/category_image/<?php echo $this->crud_model->get_type_name_by_id('category',$category,'banner'); ?>" alt=""/>
                                             <?php }else{?>
                                             <img class="img-responsive img-box image_delay" src="<?php echo img_loading(); ?>" data-src="<?php echo base_url();?>uploads/category_image/default.jpg" alt=""/>
                                             <?php }?>

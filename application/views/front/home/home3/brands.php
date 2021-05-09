@@ -38,36 +38,26 @@
 <!-- /PAGE -->
 
 <script>
-	function docReady(fn) {
-    // see if DOM is already available
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        // call on next available tick
-        setTimeout(fn, 1);
-    } else {
-        document.addEventListener("DOMContentLoaded", fn);
+$(document).ready(function(){
+    $(".brand-carousel").owlCarousel({
+        autoplay: false,
+        autoplayHoverPause: true,
+        loop: true,
+        margin: 0,
+        dots: false,
+        nav: true,
+        navText: [
+            "<i class='fa fa-angle-left'></i>",
+            "<i class='fa fa-angle-right'></i>"
+        ],
+        responsive: {
+            0: {items: 3},
+            479: {items: 3},
+            768: {items: 5},
+            991: {items: 6},
+            1024: {items: 6},
+            1280: {items: 8}
         }
-}   
-    //     $(document).ready(function(){
-        docReady(function() {
-    // $(".brand-carousel").owlCarousel({
-    //     autoplay: false,
-    //     autoplayHoverPause: true,
-    //     loop: true,
-    //     margin: 0,
-    //     dots: false,
-    //     nav: true,
-    //     navText: [
-    //         "<i class='fa fa-angle-left'></i>",
-    //         "<i class='fa fa-angle-right'></i>"
-    //     ],
-    //     responsive: {
-    //         0: {items: 3},
-    //         479: {items: 3},
-    //         768: {items: 5},
-    //         991: {items: 6},
-    //         1024: {items: 6},
-    //         1280: {items: 8}
-    //     }
-    // });
+    });
 });
 </script>

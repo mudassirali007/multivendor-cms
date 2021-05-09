@@ -2,12 +2,9 @@
 <?php
 	$system_name	 =  $this->db->get_where('general_settings',array('type' => 'system_name'))->row()->value;
 	$system_title	 =  $this->db->get_where('general_settings',array('type' => 'system_title'))->row()->value;
-	
 ?>
 <?php include 'includes_top.php'; ?>
 <body>
-		
-		
 	<div id="container" class="<?php if($page_name=='product' || $page_name=='digital' || $page_name=='display_settings' || $page_name=='product_bundle'){ echo 'effect mainnav-sm'; } else{ echo 'effect mainnav-lg'; } ?>">
 		<!--NAVBAR-->
 		<?php include 'header.php'; ?>
@@ -15,12 +12,12 @@
 		<div class="boxed" id="fol">
 			<!--CONTENT CONTAINER-->
 			<div>
-			<?php  include $this->session->userdata('title').'/'.$page_name.'.php' ?>
+			<?php include $this->session->userdata('title').'/'.$page_name.'.php' ?>
 			</div>
 			<!--END CONTENT CONTAINER-->
 			
 			<!--MAIN NAVIGATION-->
-			<?php  include $this->session->userdata('title').'/navigation.php' ?>
+			<?php include $this->session->userdata('title').'/navigation.php' ?>
 			<!--END MAIN NAVIGATION-->
 			
 		</div>
@@ -34,5 +31,5 @@
 	<!-- END OF CONTAINER -->
 
 	<!-- SETTINGS - DEMO PURPOSE ONLY -->	
-	<?php include 'includes_bottom.php';?>
+<?php include 'includes_bottom.php'; ?>
 

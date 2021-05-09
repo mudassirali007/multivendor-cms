@@ -171,12 +171,12 @@
     }
 ?>
 <script type="text/javascript">
-    // $(document).ready(function() {
-    //     $('[data-toggle="tooltip"]').tooltip(); 
-	// 	$('#setup_slider').html($('#backup_slider').html());
-    //     load_set();
-    //     createColorpickers();
-    // });
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip(); 
+		$('#setup_slider').html($('#backup_slider').html());
+        load_set();
+        createColorpickers();
+    });
 
     $('.slider_preview').click(function() {
         load_set();
