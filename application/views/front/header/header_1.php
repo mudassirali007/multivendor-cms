@@ -80,7 +80,10 @@
             </ul>
         </div>
         <div class="top-bar-right">
-            ----- ----- -----
+            <!-- ----- ----- ----- -->
+            <?php
+            include __DIR__ . '/../components/top_bar_right.php';
+            ?>
         </div>
     </div>
 </div>

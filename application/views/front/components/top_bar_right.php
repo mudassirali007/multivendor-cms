@@ -19,11 +19,14 @@
                 <?php
 					}else{
 				?>
-                <li class="dropdown currency">
+                <li class="dropdown currency" 
+                onmouseover="onRegistrationHover()"
+                onmouseout="onRegistrationOut()""
+                >
                 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					<?php echo translate('registration');?><i class="fa fa-angle-down"></i>
                     </a>
-                	<ul role="menu" class="dropdown-menu">
+                	<ul role="menu" class="dropdown-menu" id="registration-hover">
                     	<li>
                             <a href="<?php echo base_url(); ?>home/login_set/registration">
                                 <span><?php echo translate('customer_registration');?></span>
@@ -70,3 +73,13 @@
                 </li>
                 <?php }?>
             </ul>
+            <script>
+                function onRegistrationHover(){
+                    var dropdown = document.getElementById('registration-hover');
+                    dropdown.classList.add("show");  
+                }
+                function onRegistrationOut(){
+                    var dropdown = document.getElementById('registration-hover');
+                    dropdown.classList.remove("show");  
+                }
+            </script>
